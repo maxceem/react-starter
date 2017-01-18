@@ -6,6 +6,7 @@ export default (store) => ({
     require.ensure([], (require) => {
       const Home = require('./containers/HomeContainer').default;
       const reducer = require('./modules/Home').default;
+
       injectReducer(store, { key: 'home', reducer });
       cb(null, Home);
     }, 'Home');

@@ -4,7 +4,7 @@ import {actions, handleLoginSubmit} from '../modules/Login';
 import LoginView from '../components/LoginView';
 
 const resolve = [{
-  promise: ({ params, store }) => Promise.resolve(),
+  promise: () => Promise.resolve(),
 }];
 
 const mapState = (state) => ({...state.login, onSubmit: handleLoginSubmit});

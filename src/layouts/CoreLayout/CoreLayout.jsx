@@ -9,7 +9,7 @@ export const CoreLayout = ({children, user}) => (
     <Navbar>
       <Navbar.Header>
         <Navbar.Brand>
-          <a href="#">React-Bootstrap</a>
+          <a href="/">React-Bootstrap</a>
         </Navbar.Brand>
       </Navbar.Header>
       <Nav>
@@ -30,6 +30,7 @@ export const CoreLayout = ({children, user}) => (
 
 CoreLayout.propTypes = {
   children: PropTypes.any.isRequired,
+  user: PropTypes.object.isRequired,
 };
 
 export default connect((state) => ({user: state.global.user}))(CoreLayout);

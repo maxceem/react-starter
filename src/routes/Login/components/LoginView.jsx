@@ -19,8 +19,8 @@ const LoginView = ({ fields, submitting, handleSubmit, invalidLogin }) => {
           {password.touched && password.error && <span>{password.error}</span>}
 
           <div className="checkbox">
-            <label>
-              <input type="checkbox" value="remember-me" /> Remember me
+            <label htmlFor="rememberMe">
+              <input type="checkbox" value="remember-me" id="rememberMe" /> Remember me
             </label>
           </div>
           <button disabled={submitting} className="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>

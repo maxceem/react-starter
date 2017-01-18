@@ -8,7 +8,7 @@ export const HomeView = () => (
 );
 
 HomeView.propTypes = {
-  foo: PropTypes.string.isRequired,
+  foo: PropTypes.string,
 };
 
 export default HomeView;

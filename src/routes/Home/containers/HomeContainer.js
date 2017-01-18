@@ -4,7 +4,7 @@ import {actions} from '../modules/Home';
 import HomeView from '../components/HomeView';
 
 const resolve = [{
-  promise: ({ params, store }) => Promise.resolve(),
+  promise: () => Promise.resolve(),
 }];
 
 const mapState = (state) => state.home;

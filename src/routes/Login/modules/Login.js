@@ -1,4 +1,4 @@
-import {createAction, handleActions} from 'redux-actions';
+import {handleActions} from 'redux-actions';
 import { push } from 'react-router-redux';
 import APIService from '../../../services/APIService';
 
@@ -24,13 +24,8 @@ export const handleLoginSubmit = (values, dispatch) => new Promise((resolve) => 
   });
 });
 
-
-export const sample2 = () => async (dispatch, getState) => {
-
-};
-
 export const actions = {
-  
+
 };
 
 // ------------------------------------

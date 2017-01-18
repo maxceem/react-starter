@@ -11,7 +11,8 @@ export const SAMPLE = 'Home/SAMPLE';
 
 
 export const sample2 = () => async (dispatch, getState) => {
-
+  dispatch; // to pass linting
+  getState; // to pass linting
 };
 
 export const actions = {
@@ -23,5 +24,5 @@ export const actions = {
 // Reducer
 // ------------------------------------
 export default handleActions({
-  [SAMPLE]: (state, {payload}) => state,
+  [SAMPLE]: (state, {payload}) => state, // eslint-disable-line no-unused-vars
 }, {});

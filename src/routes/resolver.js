@@ -13,7 +13,6 @@ export default async (store) => {
       payload: user,
     });
   } catch (e) {
-    console.error(e);
     store.dispatch({ type: 'global/LOADED', payload: null });
   }
 };
