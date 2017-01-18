@@ -1,13 +1,14 @@
 import React, { PropTypes } from 'react';
+import CSSModules from 'react-css-modules';
 import { reduxForm } from 'redux-form';
 import _ from 'lodash';
-import classes from './LoginView.scss';
+import styles from './LoginView.scss';
 
 
 const LoginView = ({ fields, submitting, handleSubmit, invalidLogin }) => {
   const { email, password } = fields;
   return (
-    <form onSubmit={handleSubmit} className={classes.loginView}>
+    <form onSubmit={handleSubmit} styleName="login-view">
       <div className="container">
         <div className="form-signin">
           <h2 className="form-signin-heading">Please sign in</h2>
@@ -52,5 +53,5 @@ const validate = (values) => {
   return errors;
 };
 const fields = ['email', 'password'];
-export default reduxForm({ form: 'login', fields, validate })(LoginView);
+export default reduxForm({ form: 'login', fields, validate })(CSSModules(LoginView, styles));
 

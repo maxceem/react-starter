@@ -2,6 +2,7 @@ import CoreLayout from 'layouts/CoreLayout';
 import LoginRoute from './Login';
 import LogoutRoute from './Logout';
 import HomeRoute from './Home';
+import TestRoute from './Test';
 
 export const createRoutes = (store) => ({
   path: '/',
@@ -60,6 +61,7 @@ export const createRoutes = (store) => ({
       },
       childRoutes: [
         HomeRoute(store),
+        TestRoute(store),
       ],
     },
   ],

@@ -1,13 +1,15 @@
 import React, { PropTypes } from 'react';
+import CSSModules from 'react-css-modules';
 import { connect } from 'react-redux';
 
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Link } from 'react-router';
 
+import styles from './CoreLayout.scss';
 
 export const CoreLayout = ({ children, user }) => (
-  <div>
+  <div styleName="core-layout">
     <Navbar>
       <Navbar.Header>
         <Navbar.Brand>
@@ -41,4 +43,4 @@ CoreLayout.propTypes = {
   user: PropTypes.object.isRequired,
 };
 
-export default connect((state) => ({ user: state.global.user }))(CoreLayout);
+export default connect((state) => ({ user: state.global.user }))(CSSModules(CoreLayout, styles));
