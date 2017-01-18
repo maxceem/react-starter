@@ -1,5 +1,6 @@
 import CoreLayout from 'layouts/CoreLayout';
 import LoginRoute from './Login';
+import LogoutRoute from './Logout';
 import HomeRoute from './Home';
 
 export const createRoutes = (store) => ({
@@ -26,6 +27,19 @@ export const createRoutes = (store) => ({
       },
       childRoutes: [
         LoginRoute(store),
+      ],
+    },
+    // user logout route without CoreLayout
+    {
+      onEnter: (nextState, replace, cb) => {
+        const { global: { user } } = store.getState();
+        if (!user) {
+          replace('/login');
+        }
+        cb();
+      },
+      childRoutes: [
+        LogoutRoute(store),
       ],
     },
     // user must be logged in

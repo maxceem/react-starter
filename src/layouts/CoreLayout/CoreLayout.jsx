@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react';
 import {connect} from 'react-redux';
 
 import {Navbar, Nav, NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
+import { Link } from 'react-router';
 
 
 export const CoreLayout = ({children, user}) => (
@@ -9,16 +11,22 @@ export const CoreLayout = ({children, user}) => (
     <Navbar>
       <Navbar.Header>
         <Navbar.Brand>
-          <a href="/">React-Bootstrap</a>
+          <Link to="/">React-Bootstrap</Link>
         </Navbar.Brand>
       </Navbar.Header>
       <Nav>
-        <NavItem eventKey={1} href="#">Link</NavItem>
-        <NavItem eventKey={2} href="#">Link</NavItem>
+        <LinkContainer to="/login">
+          <NavItem eventKey={1}>Link</NavItem>
+        </LinkContainer>
+        <LinkContainer to="/logout">
+          <NavItem eventKey={2}>Link</NavItem>
+        </LinkContainer>
       </Nav>
       <Nav pullRight>
         <NavDropdown eventKey={3} title={user.email} id="basic-nav-dropdown">
-          <MenuItem eventKey={3.1}>Logout</MenuItem>
+          <LinkContainer to="/logout">
+            <MenuItem eventKey={3.1} >Logout</MenuItem>
+          </LinkContainer>
         </NavDropdown>
       </Nav>
     </Navbar>

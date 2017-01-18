@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { reduxForm } from 'redux-form';
+import _ from 'lodash';
 import classes from './LoginView.scss';
 
 
@@ -11,10 +12,10 @@ const LoginView = ({ fields, submitting, handleSubmit, invalidLogin }) => {
         <div className="form-signin">
           <h2 className="form-signin-heading">Please sign in</h2>
           <label htmlFor="inputEmail" className="sr-only">Email address</label>
-          <input {...email} type="email" id="inputEmail" className="form-control" placeholder="Email address" />
+          <input {..._.pick(email, 'value', 'onChange')} type="email" id="inputEmail" className="form-control" placeholder="Email address" />
           {email.touched && email.error && <span>{email.error}</span>}
           <label htmlFor="inputPassword" className="sr-only">Password</label>
-          <input {...password} type="password" id="inputPassword" className="form-control" placeholder="Password" />
+          <input {..._.pick(password, 'value', 'onChange')} type="password" id="inputPassword" className="form-control" placeholder="Password" />
 
           {password.touched && password.error && <span>{password.error}</span>}
 
