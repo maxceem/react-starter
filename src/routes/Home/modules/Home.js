@@ -1,4 +1,4 @@
-import {createAction, handleActions} from 'redux-actions';
+import { createAction, handleActions } from 'redux-actions';
 
 // ------------------------------------
 // Constants
@@ -24,5 +24,5 @@ export const actions = {
 // Reducer
 // ------------------------------------
 export default handleActions({
-  [SAMPLE]: (state, {payload}) => state, // eslint-disable-line no-unused-vars
+  [SAMPLE]: (state, { payload }) => state, // eslint-disable-line no-unused-vars
 }, {});

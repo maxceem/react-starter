@@ -1,4 +1,4 @@
-import {handleActions} from 'redux-actions';
+import { handleActions } from 'redux-actions';
 import { push } from 'react-router-redux';
 import APIService from '../../../services/APIService';
 
@@ -14,7 +14,7 @@ export const LOGIN_SUCCESS = 'Login/LOGIN_SUCCESS';
 
 
 export const handleLoginSubmit = (values, dispatch) => new Promise((resolve) => {
-  APIService.login(values).then(({user, token}) => {
+  APIService.login(values).then(({ user, token }) => {
     localStorage.token = token;
     dispatch({ type: LOGIN_SUCCESS });
     dispatch({ type: 'global/LOADED', payload: user });
@@ -35,8 +35,8 @@ export const actions = {
 // Reducer
 // ------------------------------------
 export default handleActions({
-  [LOGIN_ERROR]: (state) => ({...state, invalidLogin: true}),
-  [LOGIN_SUCCESS]: (state) => ({...state, invalidLogin: false}),
+  [LOGIN_ERROR]: (state) => ({ ...state, invalidLogin: true }),
+  [LOGIN_SUCCESS]: (state) => ({ ...state, invalidLogin: false }),
 }, {
   invalidLogin: false,
 });

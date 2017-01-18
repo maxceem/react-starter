@@ -19,7 +19,7 @@ export const actions = {
 // Reducer
 // ------------------------------------
 export default handleActions({
-  [LOADED]: (state, {payload: user}) => ({...state, loaded: true, user}),
+  [LOADED]: (state, { payload: user }) => ({ ...state, loaded: true, user }),
 }, {
   loaded: false,
   user: null,

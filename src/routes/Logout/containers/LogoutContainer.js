@@ -1,5 +1,5 @@
 import { asyncConnect } from 'redux-connect';
-import {actions} from '../modules/Logout';
+import { actions } from '../modules/Logout';
 
 import LogoutView from '../components/LogoutView';
 

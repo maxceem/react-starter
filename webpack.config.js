@@ -43,7 +43,7 @@ const getEnvPlugins = () => {
         },
       }),
       new CopyWebpackPlugin([
-        { from: './src/static', to: '.'},
+        { from: './src/static', to: '.' },
       ]),
     ];
   }

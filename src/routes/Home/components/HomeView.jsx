@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React, { PropTypes } from 'react';
 import classes from './HomeView.scss';
 
 export const HomeView = () => (

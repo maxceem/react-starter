@@ -1,12 +1,12 @@
 import React, { PropTypes } from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
-import {Navbar, Nav, NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Link } from 'react-router';
 
 
-export const CoreLayout = ({children, user}) => (
+export const CoreLayout = ({ children, user }) => (
   <div>
     <Navbar>
       <Navbar.Header>
@@ -41,4 +41,4 @@ CoreLayout.propTypes = {
   user: PropTypes.object.isRequired,
 };
 
-export default connect((state) => ({user: state.global.user}))(CoreLayout);
+export default connect((state) => ({ user: state.global.user }))(CoreLayout);

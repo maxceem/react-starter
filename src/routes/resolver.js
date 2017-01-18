@@ -7,7 +7,7 @@ export default async (store) => {
     return;
   }
   try {
-    const {user} = await APIService.getMe();
+    const { user } = await APIService.getMe();
     store.dispatch({
       type: 'global/LOADED',
       payload: user,
